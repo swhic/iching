@@ -41,6 +41,17 @@ local function build_lines(tbl)
   if string.len(line) >= 1 then
     param_strats[index] = line
   end
+  
+  if param_strats[4] == "" then
+    table.remove(param_strats, 4)
+    table.insert(param_strats, 1, "")
+  end
+
+  if param_strats[3] == "" then
+    table.remove(param_strats, 3)
+    table.insert(param_strats, 1, "")
+  end
+  
 end
 
 local function init_strategy()
@@ -50,7 +61,6 @@ end
 -- strategy management functions
 local function draw_strategy()
   strategy = strategies[ math.random( #strategies ) ]
-  print("new strategy is: "..strategy)
   return strategy
 end
 
@@ -104,7 +114,6 @@ mod.hook.register("script_pre_init", "oblique setup", function ()
   
   params:add_trigger("oblique_redraw", "          draw again")
   params:set_action("oblique_redraw", function(x)
-    print("redrawing...")
     init_strategy()
     update_strats()
     _menu.rebuild_params() 
