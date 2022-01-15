@@ -1,4 +1,4 @@
-# IChing
+# iching
 
 This is a Norns mod that adds a hexagram from the IChing near the top of the params menu.
 
