@@ -1,6 +1,6 @@
 local mod = require 'core/mods'
 
-local strategies = require ‘iching/strategies'
+local strategies = require 'iching/strategies'
 
 local strategy = ""
 
@@ -8,7 +8,7 @@ local strategy = ""
 local param_strats = {"","","","",""}
 
 -- Whether the strategy is unfurled in the params
-local iching_state = {iching
+local iching_state = {
   show=false
 }
 
